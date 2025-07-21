@@ -1,0 +1,598 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAHAD</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="font-sans bg-gray-50">
+
+    <!-- Barre de navigation -->
+    <nav class="bg-white shadow-lg w-full fixed top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <i class="fas fa-code text-purple-600 text-2xl mr-2"></i>
+                    <span class="font-semibold text-xl text-gray-800">SAHAD</span>
+                </div>
+                
+                <!-- Menu desktop -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#accueil" class="text-gray-800 hover:text-purple-600 px-3 py-2 rounded-md text-sm font-medium transition">Accueil</a>
+                    <a href="#services" class="text-gray-800 hover:text-purple-600 px-3 py-2 rounded-md text-sm font-medium transition">Services</a>
+                    <a href="#portfolio" class="text-gray-800 hover:text-purple-600 px-3 py-2 rounded-md text-sm font-medium transition">Portfolio</a>
+                    <a href="#contact" class="text-gray-800 hover:text-purple-600 px-3 py-2 rounded-md text-sm font-medium transition">Contact</a>
+                </div>
+                
+                <!-- Bouton mobile -->
+                <div class="md:hidden">
+                    <button id="menu-btn" class="text-gray-800 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Menu mobile -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white pb-3 px-2">
+            <a href="#accueil" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:text-purple-600">Accueil</a>
+            <a href="#services" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:text-purple-600">Services</a>
+            <a href="#portfolio" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:text-purple-600">Portfolio</a>
+            <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:text-purple-600">Contact</a>
+        </div>
+    </nav>
+
+    <style>
+        /* Animation personnalisée */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        /* Gradient personnalisé */
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        /* Style personnalisé pour les cartes */
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+
+    <!-- Hero Section -->
+    <section id="accueil" class="gradient-bg text-white pt-32 pb-20 px-4">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">Salut! Je suis Développeur</h1>
+                <p class="text-xl mb-8 opacity-90">Je crée des expériences web modernes et réactives qui impressionnent vos utilisateurs.</p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <button class="bg-white text-purple-600 hover:bg-gray-100 px-6 py-3 rounded-lg font-medium transition duration-300 transform hover:scale-105">
+                        Voir mon travail <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                    <button class="border-2 border-white text-white hover:bg-white hover:text-purple-600 px-6 py-3 rounded-lg font-medium transition duration-300 transform hover:scale-105">
+                        <i class="fas fa-envelope mr-2"></i> Me contacter
+                    </button>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <img src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                     alt="Développement web" 
+                     class="rounded-lg shadow-2xl floating max-w-md w-full">
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Mes Services</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Je propose une gamme complète de services pour répondre à tous vos besoins numériques.</p>
+            </div>
+            
+            <div id="portfolio-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-gray-50 p-8 rounded-xl transition duration-300 card-hover">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-laptop-code text-purple-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Développement Web</h3>
+                    <p class="text-gray-600">Création de sites web modernes et réactifs avec les dernières technologies comme React, Vue.js et Tailwind CSS.</p>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="bg-gray-50 p-8 rounded-xl transition duration-300 card-hover">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-mobile-alt text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Applications Mobiles</h3>
+                    <p class="text-gray-600">Développement d'applications iOS et Android performantes avec React Native ou Flutter.</p>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="bg-gray-50 p-8 rounded-xl transition duration-300 card-hover">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-search-dollar text-green-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">SEO Optimisation</h3>
+                    <p class="text-gray-600">Amélioration du référencement naturel pour augmenter votre visibilité sur les moteurs de recherche.</p>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="bg-gray-50 p-8 rounded-xl transition duration-300 card-hover">
+                    <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-paint-brush text-yellow-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">UI/UX Design</h3>
+                    <p class="text-gray-600">Conception d'interfaces utilisateur intuitives et d'expériences utilisateur mémorables.</p>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="bg-gray-50 p-8 rounded-xl transition duration-300 card-hover">
+                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-server text-red-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Hébergement Cloud</h3>
+                    <p class="text-gray-600">Solutions d'hébergement sécurisées et scalables sur AWS, Google Cloud ou Azure.</p>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="bg-gray-50 p-8 rounded-xl transition duration-300 card-hover">
+                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-chart-line text-indigo-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Analyse de Données</h3>
+                    <p class="text-gray-600">Analyse et visualisation de données pour prendre des décisions éclairées basées sur les données.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Mon Portfolio</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Découvrez une sélection de mes projets récents.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Projet 1 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg transition duration-300 transform hover:scale-105">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         alt="Projet E-commerce" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Boutique E-commerce</h3>
+                        <p class="text-gray-600 mb-4">Plateforme complète avec paiement en ligne et gestion des stocks.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">React</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Node.js</span>
+                            <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Projet 2 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg transition duration-300 transform hover:scale-105">
+                    <img src="https://images.unsplash.com/photo-1467232004584-a241de8b3885?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" 
+                         alt="Projet Application Mobile" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Application de Fitness</h3>
+                        <p class="text-gray-600 mb-4">Suivi des entraînements et nutrition avec synchronisation des wearables.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">React Native</span>
+                            <span class="bg-red-100 text-red-800 text-xs px-3 py-1 rounded-full">Firebase</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Projet 3 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg transition duration-300 transform hover:scale-105">
+                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         alt="Projet Dashboard" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Dashboard Analytique</h3>
+                        <p class="text-gray-600 mb-4">Visualisation de données en temps réel avec filtres avancés.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-yellow-100 text-yellow-800 text-xs px-3 py-1 rounded-full">Vue.js</span>
+                            <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">D3.js</span>
+                            <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">Tailwind</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projet 4 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg transition duration-300 transform hover:scale-105">
+                    <img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         alt="Projet Blog" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Plateforme de Blog</h3>
+                        <p class="text-gray-600 mb-4">Système de publication avec gestion des utilisateurs et commentaires.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Next.js</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">GraphQL</span>
+                            <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">PostgreSQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projet 5 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg transition duration-300 transform hover:scale-105">
+                    <img src="https://images.unsplash.com/photo-1555421689-3f034debb7a6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         alt="Projet CRM" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Système CRM</h3>
+                        <p class="text-gray-600 mb-4">Gestion de relation client avec tableau de bord personnalisable.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">Angular</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">NestJS</span>
+                            <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">MySQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projet 6 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg transition duration-300 transform hover:scale-105">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         alt="Projet API" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">API RESTful</h3>
+                        <p class="text-gray-600 mb-4">Service backend sécurisé avec authentification JWT et documentation Swagger.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-yellow-100 text-yellow-800 text-xs px-3 py-1 rounded-full">Python</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">FastAPI</span>
+                            <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">Docker</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="border-2 border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white px-6 py-3 rounded-lg font-medium transition duration-300">
+                    Voir plus de projets <i class="fas fa-plus ml-2"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Témoignages -->
+    <section class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Ce qu'ils disent de moi</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Les retours de mes clients et collaborateurs.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Témoignage 1 -->
+                <div class="bg-gray-50 p-8 rounded-xl">
+                    <div class="flex items-center mb-6">
+                        <img src="sy.jpg" alt="Client" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Mariama Dalanda Sy</h4>
+                            <p class="text-gray-600 text-sm">Responsable Marketing</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">"Le travail de SalutDev a transformé notre présence en ligne. Notre site web est maintenant plus rapide, plus beau et génère 40% plus de leads qu'avant."</p>
+                    <div class="flex mt-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <!-- Témoignage 2 -->
+                <div class="bg-gray-50 p-8 rounded-xl">
+                    <div class="flex items-center mb-6">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Ahmadou Tijane Bah</h4>
+                            <p class="text-gray-600 text-sm">CEO, Entreprise XYZ</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">"Non seulement le projet a été livré à temps, mais l'attention portée aux détails et aux bonnes pratiques a dépassé nos attentes. Un vrai professionnel!"</p>
+                    <div class="flex mt-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 gradient-bg text-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">Travaillons ensemble</h2>
+                <p class="max-w-2xl mx-auto opacity-90">Que vous ayez un projet en tête ou simplement une question, n'hésitez pas à me contacter.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div>
+                    <form class="space-y-6">
+                        <div>
+                            <label for="name" class="block mb-2 text-sm font-medium">Votre nom</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-10 border border-white border-opacity-20 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50 placeholder-white placeholder-opacity-70" placeholder="Jean Dupont">
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block mb-2 text-sm font-medium">Votre email</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-10 border border-white border-opacity-20 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50 placeholder-white placeholder-opacity-70" placeholder="jean@exemple.com">
+                        </div>
+                        
+                        <div>
+                            <label for="subject" class="block mb-2 text-sm font-medium">Sujet</label>
+                            <input type="text" id="subject" class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-10 border border-white border-opacity-20 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50 placeholder-white placeholder-opacity-70" placeholder="Proposition de projet">
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block mb-2 text-sm font-medium">Votre message</label>
+                            <textarea id="message" rows="5" class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-10 border border-white border-opacity-20 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50 placeholder-white placeholder-opacity-70" placeholder="Décrivez votre projet..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-white text-purple-600 hover:bg-gray-100 px-6 py-3 rounded-lg font-medium transition duration-300">
+                            Envoyer le message <i class="fas fa-paper-plane ml-2"></i>
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="flex flex-col justify-center">
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-white bg-opacity-20 p-3 rounded-full mr-4">
+                                <i class="fas fa-map-marker-alt text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg mb-1">Adresse</h4>
+                                <p class="opacity-90">Labe - HAFIA </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-white bg-opacity-20 p-3 rounded-full mr-4">
+                                <i class="fas fa-envelope text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg mb-1">Email</h4>
+                                <p class="opacity-90">elhadjoumarhadiatou1@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-white bg-opacity-20 p-3 rounded-full mr-4">
+                                <i class="fas fa-phone-alt text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg mb-1">Téléphone</h4>
+                                <p class="opacity-90">+224-620642024</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-10">
+                        <h4 class="font-semibold text-lg mb-4">Suivez-moi</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="bg-white bg-opacity-10 hover:bg-opacity-20 w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="bg-white bg-opacity-10 hover:bg-opacity-20 w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="bg-white bg-opacity-10 hover:bg-opacity-20 w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" class="bg-white bg-opacity-10 hover:bg-opacity-20 w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                                <i class="fab fa-dribbble"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">À Propos de Moi</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Découvrez mon parcours et mes compétences</p>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/3 flex justify-center">
+                    <img src="oumar.jpg" 
+                         alt="ELhadj Oumar Diallo" 
+                         class="rounded-full w-64 h-64 object-cover shadow-xl">
+                </div>
+                
+                <div class="md:w-2/3">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">ELhadj Oumar Diallo</h3>
+                    <p class="text-gray-600 mb-6">Développeur Full Stack | Data Scientist | Diplômé en Mathématiques Appliquées</p>
+                    
+                    <div class="mb-8">
+                        <h4 class="text-lg font-semibold text-gray-800 mb-3">Formation</h4>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <div class="flex items-start mb-4">
+                                <div class="bg-purple-100 p-2 rounded-full mr-4">
+                                    <i class="fas fa-graduation-cap text-purple-600"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-medium text-gray-800">Licence en Mathématiques Appliquées</h5>
+                                    <p class="text-gray-600 text-sm">Université de Labe </p>
+                                    <p class="text-gray-500 text-xs">2023 - 2026</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="text-lg font-semibold text-gray-800 mb-3">Compétences Techniques</h4>
+                            <ul class="space-y-2">
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-purple-600 mr-2"></i>
+                                    <span>Développement Full Stack (React, Node.js)</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-purple-600 mr-2"></i>
+                                    <span>Data Science & Machine Learning</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-purple-600 mr-2"></i>
+                                    <span>Analyse de données avec Python/R</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-purple-600 mr-2"></i>
+                                    <span>Bases de données SQL/NoSQL</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="text-lg font-semibold text-gray-800 mb-3">Qualités</h4>
+                            <ul class="space-y-2">
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-purple-600 mr-2"></i>
+                                    <span>Résolution de problèmes complexes</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-purple-600 mr-2"></i>
+                                    <span>Sens analytique développé</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-purple-600 mr-2"></i>
+                                    <span>Capacité d'adaptation</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-purple-600 mr-2"></i>
+                                    <span>Travail en équipe</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <a href="#contact" class="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-lg font-medium transition inline-block">
+                            Contactez-moi <i class="fas fa-paper-plane ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">SAHAD</h3>
+                    <p class="text-gray-400">Création de solutions web sur mesure pour propulser votre entreprise vers l'avant.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Liens rapides</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#accueil" class="text-gray-400 hover:text-white transition">Accueil</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition">Services</a></li>
+                        <li><a href="#portfolio" class="text-gray-400 hover:text-white transition">Portfolio</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Développement Web</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Applications Mobiles</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">UI/UX Design</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Consultation</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">Abonnez-vous pour recevoir les dernières actualités.</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Votre email" class="px-4 py-2 rounded-l-lg text-gray-900 focus:outline-none w-full">
+                        <button class="bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-r-lg transition">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm">© 2025 SAHAD. Tous droits réservés.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-white transition">Conditions d'utilisation</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">Politique de confidentialité</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-purple-600 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition opacity-0 invisible">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Menu mobile
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Back to top button
+        const backToTopBtn = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.remove('opacity-0', 'invisible');
+                backToTopBtn.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopBtn.classList.remove('opacity-100', 'visible');
+                backToTopBtn.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Animation au chargement
+        document.addEventListener('DOMContentLoaded', () => {
+            const elements = document.querySelectorAll('section, .card-hover');
+            elements.forEach((el, index) => {
+                setTimeout(() => {
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
+                }, 100 * index);
+            });
+        });
+    </script>
+</body>
+</html>
